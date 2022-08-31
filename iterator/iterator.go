@@ -3,6 +3,7 @@ package iterator
 type Number struct {
 	Value int
 }
+//Collection é apenas um container para objetos.
 type Collection interface {
 	createIterator() Iterator
 }
@@ -11,6 +12,8 @@ type NumberCollection struct {
 	Numbers []*Number
 }
 
+//Encapsula uma iteração, esse padrão depende dessa interface chamada Iterator.
+//O método hasNext, observa se há elementos a serem iterados e retorna o próximo objeto na iteração.
 type Iterator interface {
 	HasNext() bool
 	GetNext() *Number
